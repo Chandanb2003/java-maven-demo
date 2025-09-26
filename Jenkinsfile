@@ -11,16 +11,9 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('Docker Build') {
+        stage('Deploy to tomcat ') {
             steps {
-                script {
-                    dockerImage = docker.build("java-maven-demo:latest")
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploy stage: add deployment steps as needed, e.g., docker run or push'
+                echo 'Deploy stage: add deployment steps as needed, e.g., deploy to Tomcat'
             }
         }
     }
